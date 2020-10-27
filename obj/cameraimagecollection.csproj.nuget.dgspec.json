@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/dohtem81/repos/csharp/cameraimagecollection/cameraimagecollection.csproj": {}
+  },
+  "projects": {
+    "/Users/dohtem81/repos/csharp/cameraimagecollection/cameraimagecollection.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dohtem81/repos/csharp/cameraimagecollection/cameraimagecollection.csproj",
+        "projectName": "cameraimagecollection",
+        "projectPath": "/Users/dohtem81/repos/csharp/cameraimagecollection/cameraimagecollection.csproj",
+        "packagesPath": "/Users/dohtem81/.nuget/packages/",
+        "outputPath": "/Users/dohtem81/repos/csharp/cameraimagecollection/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dohtem81/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Emgu.CV": {
+              "target": "Package",
+              "version": "[4.4.0.4099, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.301/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

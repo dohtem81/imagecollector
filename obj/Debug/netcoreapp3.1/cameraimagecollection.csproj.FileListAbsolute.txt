@@ -1,0 +1,14 @@
+/Users/dohtem81/repos/csharp/cameraimagecollection/bin/Debug/netcoreapp3.1/cameraimagecollection.deps.json
+/Users/dohtem81/repos/csharp/cameraimagecollection/bin/Debug/netcoreapp3.1/cameraimagecollection.runtimeconfig.json
+/Users/dohtem81/repos/csharp/cameraimagecollection/bin/Debug/netcoreapp3.1/cameraimagecollection.runtimeconfig.dev.json
+/Users/dohtem81/repos/csharp/cameraimagecollection/bin/Debug/netcoreapp3.1/cameraimagecollection.dll
+/Users/dohtem81/repos/csharp/cameraimagecollection/bin/Debug/netcoreapp3.1/cameraimagecollection.pdb
+/Users/dohtem81/repos/csharp/cameraimagecollection/obj/Debug/netcoreapp3.1/cameraimagecollection.csprojAssemblyReference.cache
+/Users/dohtem81/repos/csharp/cameraimagecollection/obj/Debug/netcoreapp3.1/cameraimagecollection.AssemblyInfoInputs.cache
+/Users/dohtem81/repos/csharp/cameraimagecollection/obj/Debug/netcoreapp3.1/cameraimagecollection.AssemblyInfo.cs
+/Users/dohtem81/repos/csharp/cameraimagecollection/obj/Debug/netcoreapp3.1/cameraimagecollection.csproj.CoreCompileInputs.cache
+/Users/dohtem81/repos/csharp/cameraimagecollection/obj/Debug/netcoreapp3.1/cameraimagecollection.dll
+/Users/dohtem81/repos/csharp/cameraimagecollection/obj/Debug/netcoreapp3.1/cameraimagecollection.pdb
+/Users/dohtem81/repos/csharp/cameraimagecollection/obj/Debug/netcoreapp3.1/cameraimagecollection.genruntimeconfig.cache
+/Users/dohtem81/repos/csharp/cameraimagecollection/bin/Debug/netcoreapp3.1/Emgu.CV.Platform.NetStandard.dll
+/Users/dohtem81/repos/csharp/cameraimagecollection/obj/Debug/netcoreapp3.1/cameraimagecollection.csproj.CopyComplete
