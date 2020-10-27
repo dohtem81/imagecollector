@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "cameraimagecollection/1.0.0": {
         "dependencies": {
-          "Emgu.CV": "4.4.0.4099"
+          "Emgu.CV.runtime.ubuntu": "4.4.0.4099"
         },
         "runtime": {
           "cameraimagecollection.dll": {}
@@ -25,6 +25,11 @@
             "assemblyVersion": "4.4.0.4099",
             "fileVersion": "4.4.0.4099"
           }
+        }
+      },
+      "Emgu.CV.runtime.ubuntu/4.4.0.4099": {
+        "dependencies": {
+          "Emgu.CV": "4.4.0.4099"
         }
       },
       "Microsoft.NETCore.Platforms/1.1.1": {},
@@ -165,6 +170,13 @@
       "sha512": "sha512-aEZQiPobTIkd5oG2q+qgO/bAsocnplq8jU70e/PqlkBAMfshlwFk6c/IOkoEAtx4PANvdx72fOE0vhe+frLsnA==",
       "path": "emgu.cv/4.4.0.4099",
       "hashPath": "emgu.cv.4.4.0.4099.nupkg.sha512"
+    },
+    "Emgu.CV.runtime.ubuntu/4.4.0.4099": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a6Ox6+gfv/3aGDizj/Eyk6X0ZaTxzvUtM2BIU47qbGQDovzSJ7Dq3dRrBifvOJRVWjRKHBnCpXo3Rv8AybwL+A==",
+      "path": "emgu.cv.runtime.ubuntu/4.4.0.4099",
+      "hashPath": "emgu.cv.runtime.ubuntu.4.4.0.4099.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.1": {
       "type": "package",

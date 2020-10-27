@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Emgu.CV" Version="4.4.0.4099" />
+    
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="emgu.cv.runtime.ubuntu" Version="4.4.0.4099" />
   </ItemGroup>
 
 </Project>
