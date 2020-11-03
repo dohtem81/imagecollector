@@ -70,6 +70,8 @@ namespace cameraimagecollection.utils
                         }
                     }
                 }
+
+                Thread.Sleep(5);
             }
         }
         private void MainThread()
@@ -81,12 +83,11 @@ namespace cameraimagecollection.utils
                 {
                     try
                     {
-                        string filename = string.Format("{0}_{1}.jpg", this.name, DateTime.Now.ToString("HHmmssfff"));
+                        string filename = string.Format("{0}_{1}.jpg", this.name, DateTime.Now.ToString("yyyymmdd_HHmmssfff"));
                         string[] path = {@"/", "var", "collector", "data", filename};
                         if (!this.currentFrame.IsEmpty)
                         {
-                            // Mat frameToSave = this.currentFrame.Clone();
-                            // frameToSave.Save(Path.Combine(path));
+                            currentFrame.Save(Path.Combine(path));
                             Console.WriteLine("{0} frame saved to {1}", this.name, Path.Combine(path));
                         }
                         else
