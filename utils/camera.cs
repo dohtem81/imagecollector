@@ -17,6 +17,7 @@ namespace cameraimagecollection.utils
         private VideoCapture capture;
         private bool threadRunning;
         private readonly object __frameLock = new object();
+        private bool firstException = false;
 
         public Camera(string cameraName, string connectionLink, int phase)
         {
@@ -29,7 +30,7 @@ namespace cameraimagecollection.utils
             this.threadRunning = true;
 
             this.thread = new Thread(this.MainThread);
-            this.thread.IsBackground = true;
+            this.thread.IsBackground = false;
             this.thread.Start();
             (new Thread(this.FrameReadThread)).Start();
         }
@@ -38,24 +39,42 @@ namespace cameraimagecollection.utils
         {
             while(this.threadRunning)
             {
-                Mat newFrame = this.capture.QueryFrame();
+                Mat newFrame = null;
+                try 
+                {
+                    newFrame = this.capture.QueryFrame();
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("{0}", e.ToString());
+                }
                 lock(this.__frameLock)
                 {
                     try
                     {
-                        this.currentFrame = newFrame.Clone();
+                        if (!newFrame.IsEmpty)
+                        {
+                            //this.currentFrame = newFrame.Clone();
+                            newFrame.CopyTo(this.currentFrame);
+                            newFrame.Dispose();
+                            this.firstException = true;
+                        }
                         //Console.WriteLine("{0} new frame!", this.name);
                     }
-                    catch
+                    catch(Exception e)
                     {
-
+                        if (this.firstException)
+                        {
+                            Console.WriteLine("{0} >> {1}", this.name, e.ToString());
+                            this.firstException = false;
+                        }
                     }
                 }
             }
         }
         private void MainThread()
         {
-            while((DateTime.Now - this.creationTime).TotalSeconds < 15)
+            while((DateTime.Now - this.creationTime).TotalSeconds < 360)
             {
                 Console.WriteLine("{0} is alive for {1}", this.name, (DateTime.Now - this.creationTime).TotalMilliseconds);
                 lock(this.__frameLock)
@@ -66,7 +85,8 @@ namespace cameraimagecollection.utils
                         string[] path = {@"/", "var", "collector", "data", filename};
                         if (!this.currentFrame.IsEmpty)
                         {
-                            this.currentFrame.Save(Path.Combine(path));
+                            // Mat frameToSave = this.currentFrame.Clone();
+                            // frameToSave.Save(Path.Combine(path));
                             Console.WriteLine("{0} frame saved to {1}", this.name, Path.Combine(path));
                         }
                         else
@@ -74,13 +94,16 @@ namespace cameraimagecollection.utils
                             Console.WriteLine("{0} has empty frame, can't save to {1}", this.name, Path.Combine(path));
                         }
                     }
-                    catch
+                    catch(Exception ex)
                     {
-
+                        Console.WriteLine(ex.ToString());
                     }
                 }
+                Console.WriteLine("entering sleep...");
                 Thread.Sleep(this.phase);
+                Console.WriteLine("done sleeping...");
             }
+            Console.WriteLine("{0} terminated after {1}s", this.name, (DateTime.Now - this.creationTime).TotalSeconds);
             this.threadRunning = false;
         }
     }
