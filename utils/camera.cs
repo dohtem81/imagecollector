@@ -76,7 +76,7 @@ namespace cameraimagecollection.utils
         }
         private void MainThread()
         {
-            while((DateTime.Now - this.creationTime).TotalSeconds < 360)
+            while(true)
             {
                 Console.WriteLine("{0} is alive for {1}", this.name, (DateTime.Now - this.creationTime).TotalMilliseconds);
                 lock(this.__frameLock)
